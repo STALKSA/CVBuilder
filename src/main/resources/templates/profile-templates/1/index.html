@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Joe Bloggs - Curriculum Vitae</title>
+<title>Павел Власов - Краткая справка</title>
 
 <meta name="viewport" content="width=device-width"/>
-<meta name="description" content="The Curriculum Vitae of Joe Bloggs."/>
+<meta name="description" content="Краткая справка о Павле"/>
 <meta charset="UTF-8"> 
 
 <link type="text/css" rel="stylesheet" href="../profile-templates/1/style.css">
@@ -21,17 +21,17 @@
 		
 		<div id="name">
 			<h1 class="quickFade delayTwo">
-				<span th:text="${userProfile.firstName}">Joe</span>
-				<span th:text="${userProfile.lastName}">Bloggs</span>
-				<a th:if="${currentUsersProfile}" href="/edit">Edit</a>
+				<span th:text="${userProfile.firstName}">Павел</span>
+				<span th:text="${userProfile.lastName}">Власов</span>
+				<a th:if="${currentUsersProfile}" href="/edit">Редактировать</a>
 			</h1>
-			<h2 class="quickFade delayThree" th:text="${userProfile.designation}">Job Title</h2>
+			<h2 class="quickFade delayThree" th:text="${userProfile.designation}">Рабочее место</h2>
 		</div>
 		
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <span th:text="${userProfile.email}">joe@bloggs.com</span></li>
-				<li>m: <span th:text="${userProfile.phone}">01234567890</span></li>
+				<li>e: <span th:text="${userProfile.email}">pavel@mail.com</span></li>
+				<li>m: <span th:text="${userProfile.phone}">=79803007766</span></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -41,7 +41,7 @@
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+					<h1>Личные данные</h1>
 				</div>
 				
 				<div class="sectionContent">
@@ -54,17 +54,17 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Опыт работы</h1>
 			</div>
 			
 			<div class="sectionContent" th:each="job : ${userProfile.jobs}">
 				<article>
-					<h2><span th:text="${job.designation}">Job Title</span> at <span th:text="${job.company}">Company</span></h2>
+					<h2><span th:text="${job.designation}">Название</span> at <span th:text="${job.company}">Компания</span></h2>
 					<p class="subDetails">
-						<span th:text="${job.formattedStartDate}">April 2011</span> -
-						<span th:text="${job.currentJob}? 'Present' : ${job.formattedEndDate}">Present</span></p>
+						<span th:text="${job.formattedStartDate}">Август 2015</span> -
+						<span th:text="${job.currentJob}? 'Present' : ${job.formattedEndDate}">настоящее</span></p>
 					<ul th:each="responsibility : ${job.responsibilities}">
-						<li th:text="${responsibility}">Responsibility</li>
+						<li th:text="${responsibility}">Обязанности</li>
 					</ul>
 				</article>
 			</div>
@@ -74,12 +74,12 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Key Skills</h1>
+				<h1>Ключевые навыки</h1>
 			</div>
 			
 			<div class="sectionContent">
 				<ul class="keySkills" th:each="skill : ${userProfile.skills}">
-					<li th:text="${skill}">A Key Skill</li>
+					<li th:text="${skill}">Навык</li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -88,13 +88,13 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Education</h1>
+				<h1>Образование</h1>
 			</div>
 			
 			<div class="sectionContent" th:each="education : ${userProfile.educations}">
 				<article>
-					<h2 th:text="${education.college}">College/University</h2>
-					<p class="subDetails" th:text="${education.qualification}">Qualification</p>
+					<h2 th:text="${education.college}">Колледж/Университет</h2>
+					<p class="subDetails" th:text="${education.qualification}">Специальность</p>
 					<p th:text="${education.summary}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
 				</article>
 
