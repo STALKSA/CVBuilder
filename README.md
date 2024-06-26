@@ -16,4 +16,4 @@
 
 
 
-https://raw.githubusercontent.com/Damans227/Resume-Generator/main/screenshots/resume-generator.gif
+![Resume Generator](https://raw.githubusercontent.com/Damans227/Resume-Generator/main/screenshots/resume-generator.gif)
